@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREVIEW SAJA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="galaxy.mp4" type="video/mp4">
+    </video>
+
+
+    
+    <audio id="bg-music">
+        <source src="The 1975 - About You.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="container">
+        <h1 class="title">💫Happy Birthday💫</h1>
+        <button id="play-music" class="glowing-button">Klik ini dulu, habis itu klik bintang yg kiri yaa!</button>
+        <div id="record-disc"></div>
+    </div>
+
+    <div class="sky">
+        <div class="star" data-message="pastinya ini tak isi ucapan 1" id="star-left"></div>
+        <div class="star" data-message="ucapan 2" id="star-middle"></div>
+        <div class="star" data-message="coba bintang e klik berkali2" id="star-right"></div>
+    </div>
+
+    <div id="message-box">
+        <p id="message-text"></p>
+        <img id="message-image" src="" alt="Gambar Pesan" style="display: none; width: 200px; margin-top: 10px;">
+    </div>
+
+    <div id="fake-ending">
+        <h2>Makasih sudah melihat ini 🌙✨</h2>
+        <p>(Coba tekan bintang birunya..)</p>
+    </div>
+    
+    <div id="super-star" class="star" data-message="✨ Kejutan terakhir untukmu! ✨" data-image="blue.png"  style="display: none;"></div>
+    <div id="video-container" class="hidden">
+        <video id="surprise-video" controls>
+            <source src="vt.mp4" type="video/mp4">
+            Browser kamu tidak mendukung pemutaran video.
+        </video>
+        <button id="close-video">Tutup</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+<footer>
+    <p>Made with 💙 by Ega Zakky Tampan</p>
+</footer>
+
+</html>

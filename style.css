@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.title {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px rgba(11, 60, 116, 0.943);
+    background: linear-gradient(135deg, #065498, #033b63);
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(10, 100, 118, 0.936);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(19, 125, 149, 0.902); }
+    50% { box-shadow: 0 0 30px rgba(13, 92, 105, 0.991); }
+    100% { box-shadow: 0 0 10px rgba(7, 73, 126, 0.947); }
+}
+
+#play-music {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.music-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#record-disc {
+    width: 100px;
+    height: 100px;
+    background: url('vinyl.png') no-repeat center center/contain;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.glowing-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(255, 223, 186, 0.8);
+    padding: 12px 30px;
+    background: linear-gradient(145deg, #0f3057, #005792);
+    border: 2px solid gold;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.25, 1.5, 0.5, 1), box-shadow 0.2s ease;
+}
+
+.glowing-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(255, 223, 0, 0.9);
+}
+
+.glowing-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(255, 223, 0, 0.6), inset 0 0 15px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(145deg, #0b223d, #003d63);
+}
+
+.glowing-button::before,
+.glowing-button::after {
+    content: "✨";
+    font-size: 20px;
+    margin: 0 10px;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.sky {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.star {
+    width: 80px;
+    height: 80px;
+    background: url('star.png') no-repeat center center/contain;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.star:active {
+    transform: scale(1.5);
+    opacity: 0.7;
+}
+
+#message-box {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 20;
+}
+
+#fake-ending {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 50;
+    animation: fadeIn 2s ease-in-out;
+}
+#super-star {
+    width: 100px;
+    height: 100px;
+    background: url('blue.png') no-repeat center center/contain;
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: none; /* Disembunyikan dulu */
+    z-index: 100;
+    animation: glowStar 1.5s infinite alternate;
+}
+
+@keyframes glowStar {
+    from { transform: scale(1); opacity: 0.8; }
+    to { transform: scale(1.2); opacity: 1; }
+}
+
+#video-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 200;
+}
+
+#video-container video {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+#close-video {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 15px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 162, 255, 0.8);
+    animation: fadeIn 2s ease-in-out, glowEffect 3s infinite alternate;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
